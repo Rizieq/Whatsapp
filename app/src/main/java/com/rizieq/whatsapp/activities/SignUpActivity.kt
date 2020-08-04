@@ -113,11 +113,12 @@ class SignUpActivity : AppCompatActivity() {
                         val email = edt_email.text.toString()
                         val phone = edt_phone.text.toString()
                         val name = edt_name.text.toString()
+                        val password = edt_password.text.toString()
                         val user = User(
                             email,
                             phone,
                             name,
-                            "",
+                            password,
                             "Hello i'm new",
                             "",
                             ""
