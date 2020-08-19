@@ -64,3 +64,4 @@ dependencies {
     //Permission
     implementation 'pub.devrel:easypermissions:2.0.1'
 }
+apply plugin: 'com.google.gms.google-services'

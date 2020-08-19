@@ -1,5 +1,6 @@
 package com.rizieq.whatsapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.rizieq.whatsapp.R
+import com.rizieq.whatsapp.activities.ConversationActivity
 import com.rizieq.whatsapp.adapters.ChatsAdapter
+import com.rizieq.whatsapp.listeners.ChatClickListener
 import com.rizieq.whatsapp.listeners.FailureCallback
 import com.rizieq.whatsapp.utils.Chat
 import com.rizieq.whatsapp.utils.Constants.DATA_CHATS
@@ -19,7 +22,7 @@ import com.rizieq.whatsapp.utils.Constants.DATA_USERS
 import com.rizieq.whatsapp.utils.Constants.DATA_USER_CHATS
 import kotlinx.android.synthetic.main.activity_chats_fragment.*
 
-class ChatsFragment : Fragment(), ChatsAdapter.ChatClickListener {
+class ChatsFragment : Fragment(), ChatClickListener {
 
     private var chatsAdapter = ChatsAdapter(arrayListOf())
     private val firebaseDb = FirebaseFirestore.getInstance()
@@ -143,7 +146,9 @@ class ChatsFragment : Fragment(), ChatsAdapter.ChatClickListener {
         chatsImageUrl: String?,
         chatsName: String?
     ) {
-        Toast.makeText(context, " clicked", Toast.LENGTH_SHORT).show()
+        startActivity(
+            ConversationActivity.newIntent(context, chatId, chatsImageUrl, otherUserId, chatsName)
+        )
     }
 
 }

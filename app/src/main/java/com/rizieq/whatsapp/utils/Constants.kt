@@ -11,8 +11,12 @@ object Constants {
     val DATA_USER_STATUS_TIME = "statusTime"
     val REQUEST_NEW_CHATS = 1922
     val DATA_IMAGES = "image"               // acuan mengakses table image di dalam table user
+    val REQUEST_CODE_PHOTO = 1924
 
     val DATA_USER_CHATS = "userChats" // menambahkan child baru dalam table User
     val DATA_CHATS = "Chats" // menambahkan table baru ‘Chats’
     val DATA_CHAT_PARTICIPANTS = "chatParticipants" // child baru di table Chats
+
+    val DATA_CHAT_MESSAGE = "messages"
+    val DATA_CHAT_MESSAGE_TIME = "messageTime"
 }
